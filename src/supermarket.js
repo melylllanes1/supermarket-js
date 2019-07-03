@@ -6,10 +6,10 @@ class Supermarket {
       "SR1": 5.00,
       "CF1": 11.23
     }
-    this._basket = []
+    this._basket = {}
   }
   scan (code) {
-    this._basket.push(code)
+    isNaN(this._basket[code]) ? this._basket[code] = 1 : this._basket[code] += 1
     this._total += this._priceList[code]
   }
 

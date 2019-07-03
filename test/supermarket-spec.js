@@ -20,7 +20,7 @@ describe("Supermarket", function () {
     it("adds the item to the basket", function () {
       var sut = new Supermarket()
       sut.scan("CF1")
-      assert.deepStrictEqual(sut.basket, ["CF1"])
+      assert.deepStrictEqual(sut.basket, { "CF1": 1 })
     })
   })
 })
