@@ -10,5 +10,11 @@ describe("Supermarket", function () {
       sut.scan("FR1")
       assert.strictEqual(sut.total(), 3.11)
     })
+
+    it("charges 5.00 for Strawberries (SR1)", function () {
+      var sut = new Supermarket()
+      sut.scan("SR1")
+      assert.strictEqual(sut.total(), 5.00)
+    })
   })
 })
