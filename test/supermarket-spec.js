@@ -22,5 +22,12 @@ describe("Supermarket", function () {
       sut.scan("CF1")
       assert.deepStrictEqual(sut.basket, { "CF1": 1 })
     })
+
+    it("increments the quantity count when the same item is added again to the basket", function () {
+      var sut = new Supermarket()
+      sut.scan("CF1")
+      sut.scan("CF1")
+      assert.deepStrictEqual(sut.basket, { "CF1": 2 })
+    })
   })
 })
