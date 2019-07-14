@@ -22,9 +22,16 @@ class Supermarket {
 
     for (var key in this._basket) {
       if (key === "FR1") {
-        let quantity = this._basket[key]
+        let quantity = this._basket[key] // move this above?
         if (quantity % 2 === 0) {
           discount += (quantity * this._priceList[key]) / 2
+        }
+      } else if (key === "SR1") {
+        let quantity = this._basket[key]
+        if (quantity >= 3) {
+          let normalTotal = quantity * this._priceList[key]
+          let discountedTotal = quantity * 4.50
+          discount += normalTotal - discountedTotal
         }
       }
     }

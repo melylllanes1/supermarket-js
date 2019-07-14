@@ -41,5 +41,14 @@ describe("Supermarket", function () {
       sut.scan("FR1")
       assert.strictEqual(sut.total(), 6.22)
     })
+
+    it("drops the price of SR1 to 4.50 when buying 3 or more", function () {
+      let sut = new Supermarket()
+      sut.scan("SR1")
+      sut.scan("SR1")
+      assert.strictEqual(sut.total(), 10)
+      sut.scan("SR1")
+      assert.strictEqual(sut.total(), (4.50 * 3))
+    })
   })
 })
