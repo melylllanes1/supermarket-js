@@ -14,11 +14,29 @@ class Supermarket {
   }
 
   total () {
-    return this._total
+    return this._total - this.discount()
+  }
+
+  discount () {
+    let discount = 0.00
+
+    for (var key in this._basket) {
+      if (key === "FR1") {
+        let quantity = this._basket[key]
+        if (quantity % 2 === 0) {
+          discount += (quantity * this._priceList[key]) / 2
+        }
+      }
+    }
+    return discount
   }
 
   get basket () {
     return this._basket
+  }
+
+  isEven (number) {
+    return number % 2
   }
 }
 

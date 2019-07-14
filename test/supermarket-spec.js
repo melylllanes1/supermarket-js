@@ -30,4 +30,16 @@ describe("Supermarket", function () {
       assert.deepStrictEqual(sut.basket, { "CF1": 2 })
     })
   })
+
+  describe("#total", function () {
+    it("discounts 3.11 for every 2 FR1s added", function () {
+      var sut = new Supermarket()
+      sut.scan("FR1")
+      sut.scan("FR1")
+      assert.strictEqual(sut.total(), 3.11)
+      sut.scan("FR1")
+      sut.scan("FR1")
+      assert.strictEqual(sut.total(), 6.22)
+    })
+  })
 })
