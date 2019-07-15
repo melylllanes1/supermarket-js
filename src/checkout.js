@@ -1,4 +1,4 @@
-class Supermarket {
+class Checkout {
   constructor () {
     this._total = 0
     this._priceList = {
@@ -46,4 +46,4 @@ class Supermarket {
   }
 }
 
-module.exports = Supermarket
+module.exports = Checkout
